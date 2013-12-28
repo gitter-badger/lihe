@@ -1,4 +1,5 @@
 lihe - some tools for programming:
+Copyright (C) 2013 Julian Sax <jsbc@gmx.de>
 
 mkcfil: create a .h and .c file with everything needed
 mkcppclass: create a .h and .cpp file for c++ programming as a class
