@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Configure lihe!"
+rm -rf ~/.lihe
+mkdir ~/.lihe
+read -p "Your full name: " NAME
+echo $NAME > ~/.lihe/NAME
+echo "replace this with your license head to be inserted on top of every file" >> ~/.lihe/LICENSE
+echo "save with C-O and quit with C-X" >> ~/.lihe/LICENSE
+nano ~/.lihe/LICENSE
+echo "Great! Now you are ready to use lihe."

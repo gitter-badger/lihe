@@ -1,0 +1,9 @@
+Installation tips:
+
+For a quick and complete installation, run
+	make install (as root)
+	make userconf (for every user)
+
+For uninstall, run
+	make uninstall (as root)
+	make userdeconf (for every user)

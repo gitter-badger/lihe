@@ -1,0 +1,7 @@
+lihe - some tools for programming:
+
+mkcfil: create a .h and .c file with everything needed
+mkcppclass: create a .h and .cpp file for c++ programming as a class
+mklicense: copy a license from /usr/share/common-licenses (debian-specific)
+
+For installation tips, see INSTALL

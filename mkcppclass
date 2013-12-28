@@ -1,0 +1,40 @@
+#!/bin/bash
+
+if [ "$1" = "" -o "$1" = "-h" -o "$1" = "--help" ]
+then
+    echo "mkcppclass:"
+    echo "Usage: mkcppclass <filename>"
+    exit
+fi
+
+FILENAME=$1
+FILENAME_UP=$(echo $FILENAME | tr "[:lower:]" "[:upper:]")
+FILENAME_UP+="_H"
+AUTHOR=$(cat ~/.lihe/NAME)
+LICENSE=$(cat ~/.lihe/LICENSE)
+YEAR=$(date +%Y)
+
+echo "/**********************************************" >> $FILENAME.cpp
+echo "$FILENAME.cpp" >> $FILENAME.cpp
+echo "Copyright (C) $YEAR $AUTHOR" >> $FILENAME.cpp
+echo "" >> $FILENAME.cpp
+echo "$LICENSE" >> $FILENAME.cpp
+echo "**********************************************/" >> $FILENAME.cpp
+echo "" >> $FILENAME.cpp
+echo "#include \"$FILENAME.h\"" >> $FILENAME.cpp
+echo "/**********************************************" >> $FILENAME.h
+echo "$FILENAME.h" >> $FILENAME.h
+echo "Copyright (C) $YEAR $AUTHOR" >> $FILENAME.h
+echo "" >> $FILENAME.h
+echo "$LICENSE" >> $FILENAME.h
+echo "**********************************************/" >> $FILENAME.h
+echo "" >> $FILENAME.h
+echo "#ifnef $FILENAME_UP" >> $FILENAME.h
+echo "#define $FILENAME_UP" >> $FILENAME.h
+echo "" >> $FILENAME.h
+echo "class $FILENAME" >> $FILENAME.h
+echo "{" >> $FILENAME.h
+echo "	public:" >> $FILENAME.h
+echo "	private:" >> $FILENAME.h
+echo "}" >> $FILENAME.h
+echo "#endif" >> $FILENAME.h

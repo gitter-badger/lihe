@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$1" = "" -o "$1" = "-h" -o "$1" = "--help" ]
+then
+    echo "mklicense:"
+    echo "Usage: mklicense <license>"
+    echo "The license must be located in /usr/share/common-licenses/"
+    exit
+fi
+
+cp /usr/share/common-licenses/$1 ./COPYING

@@ -1,0 +1,34 @@
+#!/bin/bash
+if [ "$1" = "" -o "$1" = "-h" -o "$1" = "--help" ]
+then
+    echo "mkcfil:"
+    echo "Usage: mkcfil <filename>"
+    exit
+fi
+
+FILENAME=$1
+FILENAME_UP=$(echo $FILENAME | tr "[:lower:]" "[:upper:]")
+FILENAME_UP+="_H"
+AUTHOR=$(cat ~/.lihe/NAME)
+LICENSE=$(cat ~/.lihe/LICENSE)
+YEAR=$(date +%Y)
+
+echo "/**********************************************" >> $FILENAME.c
+echo "$FILENAME.c" >> $FILENAME.c
+echo "Copyright (C) $YEAR $AUTHOR" >> $FILENAME.c
+echo "" >> $FILENAME.c
+echo "$LICENSE" >> $FILENAME.c
+echo "**********************************************/" >> $FILENAME.c
+echo "" >> $FILENAME.c
+echo "#include \"$FILENAME.h\"" >> $FILENAME.c
+echo "/**********************************************" >> $FILENAME.h
+echo "$FILENAME.h" >> $FILENAME.h
+echo "Copyright (C) $YEAR $AUTHOR" >> $FILENAME.h
+echo "" >> $FILENAME.h
+echo "$LICENSE" >> $FILENAME.h
+echo "**********************************************/" >> $FILENAME.h
+echo "" >> $FILENAME.h
+echo "#ifnef $FILENAME_UP" >> $FILENAME.h
+echo "#define $FILENAME_UP" >> $FILENAME.h
+echo "//add your code here" >> $FILENAME.h
+echo "#endif" >> $FILENAME.h
