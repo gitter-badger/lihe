@@ -29,7 +29,7 @@ echo "" >> $FILENAME.h
 echo "$LICENSE" >> $FILENAME.h
 echo "**********************************************/" >> $FILENAME.h
 echo "" >> $FILENAME.h
-echo "#ifnef $FILENAME_UP" >> $FILENAME.h
+echo "#ifndef $FILENAME_UP" >> $FILENAME.h
 echo "#define $FILENAME_UP" >> $FILENAME.h
 echo "" >> $FILENAME.h
 echo "class $FILENAME" >> $FILENAME.h
